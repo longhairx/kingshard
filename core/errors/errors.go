@@ -67,4 +67,7 @@ var (
 	ErrDateRangeCount   = errors.New("date range count is not equal")
 	ErrSlaveExist       = errors.New("slave has exist")
 	ErrSlaveNotExist    = errors.New("slave has not exist")
+	//<<<<<<<<<<<<<modify by mz
+	ErrAdminAuthErr = errors.New("your ip is illegal")
+	//<<<<<<<<<<<<<modify by mz end
 )

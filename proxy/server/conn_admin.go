@@ -288,6 +288,12 @@ func (c *ClientConn) handleAdminHelp(ah *sqlparser.AdminHelp) error {
 }
 
 func (c *ClientConn) handleAdmin(admin *sqlparser.Admin) error {
+	//<<<<<<<<<<<<<modify by mz
+	if c.c.RemoteAddr().String() != "127.0.0.1" {
+		return c.writeError(errors.ErrAdminAuthErr)
+
+	}
+	//<<<<<<<<<<<<<modify by mz end
 	var err error
 	var result *mysql.Resultset
 
